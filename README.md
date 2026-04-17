@@ -105,4 +105,4 @@ streamlit run dashboard.py
 
 ## 👨‍💻 Autor
 
-**Luiz Miguel de Toledo - **[**https://www.linkedin.com/in/luiz-miguel-de-toledo-b35701351/**](https://www.linkedin.com/in/luiz-miguel-de-toledo-b35701351/)
+Luiz Miguel de Toledo [**https://www.linkedin.com/in/luiz-miguel-de-toledo-b35701351/**](https://www.linkedin.com/in/luiz-miguel-de-toledo-b35701351/)
