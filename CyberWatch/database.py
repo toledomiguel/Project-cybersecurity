@@ -2,14 +2,15 @@ import mysql.connector
 
 def get_connection():
     return mysql.connector.connect(
-        host="projeto",
+        host="127.0.0.1",
         user="root",
-        password="",
-        database="cyberwatch"
+        password="toledinho06",
+        database="cyberwatch",
+        port = 3306
     )
 def get_logs():
-    conm:get_connection()
-    cursor:conm.cursor(dictionary=true)
+    conm = get_connection()
+    cursor = conm.cursor(dictionary=True)
 
     cursor.execute("SELECT * FROM logs ORDER BY event_time DESC")
     rows = cursor.fetchall()
@@ -24,7 +25,7 @@ def insert_alerts(alert_time, host_name, user_name, rule_name, severity, descrip
 
     query = """
         INSERT INTO alerts
-        (alert_time, host_name, user_name, severity, description, source_ip)
+        (alert_time, host_name, user_name, rule_name, severity, description, source_ip)
         values
         (%s, %s, %s, %s, %s, %s, %s)
         """
@@ -33,6 +34,7 @@ def insert_alerts(alert_time, host_name, user_name, rule_name, severity, descrip
         alert_time,
         host_name,
         user_name,
+        rule_name,
         severity,
         description,
         source_ip
@@ -44,21 +46,21 @@ def insert_alerts(alert_time, host_name, user_name, rule_name, severity, descrip
     conm.close()
 def get_alerts():
     conm = get_connection()
-    cursor = conn.cursor(dictionary=True)
+    cursor = conm.cursor(dictionary=True)
 
     cursor.execute("SELECT * FROM alerts ORDER BY alert_time DESC")
     rows = cursor.fetchall()
 
     cursor.close()
-    conn.close()
+    conm.close()
 
     return rows
 def clear_alerts():
-    conn = get_connection()
-    cursor = conn.cursor()
+    conm = get_connection()
+    cursor = conm.cursor()
 
     cursor.execute("DELETE FROM alerts")
-    conn.commit()
+    conm.commit()
 
     cursor.close()
-    conn.close()
+    conm.close()
