@@ -1,7 +1,3 @@
-Um bom README é o que separa um projeto amador de um projeto profissional. Como você vai apresentar isso na faculdade e talvez colocar no seu portfólio (LinkedIn/GitHub), ele precisa explicar o quê é o projeto, como instalar e como usar.
-
-Aqui está um modelo completo e profissional, já adaptado para o nome Luiz Toledo e focado em Dados e Segurança:
-
 🛡️ CyberWatch: SIEM & Log Analysis System
 O CyberWatch é um sistema de monitoramento de segurança em tempo real (SIEM simplificado) que analisa logs de servidores, detecta ameaças cibernéticas (como SQL Injection e Brute Force) e visualiza esses ataques em um dashboard interativo.
 
